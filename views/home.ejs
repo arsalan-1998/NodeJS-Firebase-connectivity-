@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            display: block;
+            margin-bottom: 80px;
+            width: 500px;
+            height: 360px;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        h2 {
+            padding: 40px;
+            font-weight: lighter;
+            text-transform: uppercase;
+            color: #414141;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 90%;
+            margin: 0 auto;
+            border: none;
+        }
+        input::placeholder {
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+        input:hover, input:focus, input:active:focus {
+            color: #ff5722;
+            outline: none;
+            border-bottom: 1px solid #ff5722;
+        }
+        input:hover::placeholder, input:focus::placeholder, input:active:focus::placeholder {
+            color: #ff5722;
+            position: relative;
+            -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+        }
+
+        .email,
+        .pwd {
+            position: relative;
+            z-index: 1;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-left: 20px;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            color: #858585;
+            font-weight: lighter;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+
+        .link {
+            text-decoration: none;
+            display: inline-block;
+            margin: 27px 28%;
+            text-transform: uppercase;
+            color: #858585;
+            font-weight: lighter;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+
+        button {
+            cursor: pointer;
+            display: inline-block;
+            width: 250px;
+            height: 40px;
+            margin-top: -10px;
+            border: none;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            color: #fff;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+        button:nth-of-type(1) {
+            background: #673ab7;
+        }
+        button:nth-of-type(2) {
+            background: #ff5722;
+        }
+        button span {
+            position: absolute;
+            display: block;
+            margin: -10px 20%;
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+        button:hover span {
+            -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+        }
+
+        .reg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transform: translateY(-100%) scale(1);
+            transform: translateY(-100%) scale(1);
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            background: #673ab7;
+            z-index: 5;
+            -webkit-transition: .8s ease-in-out;
+            transition: .8s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <p>Fill up the details</p>
+    <form action="/api/add" method="post">
+        <input type="text" name="dat[user_name]" id="user_name" placeholder="enter your name here...">
+        <br>
+        <input type="number" name="dat[phone]" id="phone" placeholder="enter your phone number here...">
+        <br>
+        <input type="date" name="dat[birthday]" id="birth_day" placeholder="07-07-1998">
+        <br>
+        <input type="text" name="dat[flag]" id="greeting_recieved">
+        <br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
